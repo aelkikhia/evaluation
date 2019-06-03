@@ -1,0 +1,23 @@
+
+# Build / Compilation
+*.pyc
+build/
+dist/
+__pycache__/
+*.egg-info/
+.eggs/
+
+# runtime / configuration
+*.bak
+*.log
+.env
+temp/
+
+# IDE
+.idea/
+*.iml
+.python-version
+
+# tests
+.coverage
+.pytest_cache/

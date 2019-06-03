@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "f1004c2a-fcd5-42d2-84da-881363090832",
+		"name": "evaluation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/array-diff happy path",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"current\": [1, 3, 5, 6, 8, 9],\n\t\"target\": [1, 2, 5, 7, 9]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/array-diff",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"array-diff"
+					]
+				},
+				"description": "happy path pass in two lists \"current\" and \"target\" and get a return value of lists \"additions\" and \"deletions\""
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/array-diff empty lists",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"current\": [],\n\t\"target\": []\n}"
+				},
+				"url": {
+					"raw": "{{url}}/array-diff",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"array-diff"
+					]
+				},
+				"description": "empty lists"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/array-diff empty json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "{{url}}/array-diff",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"array-diff"
+					]
+				},
+				"description": "empty json. should return requirements"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/array-diff incorrect data type",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"apple\": 10\n}"
+				},
+				"url": {
+					"raw": "{{url}}/array-diff",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"array-diff"
+					]
+				},
+				"description": "incorrect data type. should return requirements"
+			},
+			"response": []
+		}
+	]
+}
