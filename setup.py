@@ -12,8 +12,10 @@ setup(
     author='Taz Elkikhia',
     author_email='aelkikhia@gmail.comi',
     tests_require=[
-        "pycodestyle",
-        "pytest"
+        'flake8'
+        'pycodestyle',
+        'pylint',
+        'pytest'
     ],
     install_requires=[
         'Flask==1.0.2',

@@ -13,5 +13,3 @@ def get_dict_of_posts_from_csv(file):
         for row in reader:
             posts[int(row['postId'])] = {k: int(v) for k, v in row.items()}
         return posts
-
-

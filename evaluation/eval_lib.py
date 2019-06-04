@@ -28,6 +28,11 @@ def array_diff(current, target):
 
 
 def tally_followers(posts):
+    """
+    tally the total number of followers from original and reposts
+    :param posts:
+    :return:
+    """
     tally = {}
     for key, post in posts.items():
         original_post_id = post['postId']
@@ -43,7 +48,8 @@ def tally_followers(posts):
 
 
 def social_network_analysis(filename):
-    print(filename)
+    """ loads a csv file into a dictionary of dictionaries and tallies the
+    total number of followers"""
     posts = get_dict_of_posts_from_csv(filename)
     return tally_followers(posts)
 
@@ -51,13 +57,9 @@ def social_network_analysis(filename):
 if __name__ == "__main__":
     list_a = [1, 3, 5, 6, 8, 9]
     list_b = [1, 2, 5, 7, 9]
-    list_c = ['apple', 'carrot', 'squash', 'orange']
-    list_d = ['pear', 'carrot', 'squash', 'orange']
-    # additions, deletions = array_diff(list_a, list_b)
-    # additions, deletions = array_diff(list_c, list_d)
-    additions, deletions = array_diff(list_a, list_b)
+    additions_example, deletions_example = array_diff(list_a, list_b)
 
-    print(additions)
-    print(deletions)
+    print(additions_example)
+    print(deletions_example)
 
     print(social_network_analysis('../data/test_data.csv'))

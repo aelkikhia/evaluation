@@ -7,7 +7,8 @@ from evaluation.eval_lib import social_network_analysis
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description='get social network analysis from a csv file')
+    parser = argparse.ArgumentParser(
+        description='get social network analysis from a csv file')
     parser.add_argument('-f', '--file', type=str, dest='file', default=None,
                         help='csv file required')
 

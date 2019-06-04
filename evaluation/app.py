@@ -1,12 +1,16 @@
 from flask import Flask
 # from flask_jwt import JWT
 from flask_restful import Api
+from flask_cors import CORS
 
 from evaluation.array_diff import ArrayDiff
 
 # from evaluation.security import authenticate, identity
 
 app = Flask(__name__)
+
+# TODO configure cors for security in production
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # TODO move key to private data configuration at deployment
 app.secret_key = 'taz'
